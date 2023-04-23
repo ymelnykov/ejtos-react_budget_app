@@ -1,0 +1,16 @@
+.curr {
+    background-color: lightgreen;
+    color: white;
+}
+
+select.curr option {
+    background-color: lightgreen;
+    color: black;
+}
+
+select.curr option:hover {
+    background-color: white;
+    color: black;
+}
+
+
