@@ -12,9 +12,6 @@
     }
 
     .selected-option {
-    /* padding: 10px; */
-    /* border: 1px solid #ddd;
-    border-radius: 6px; */
     background-color: lightgreen;
     color: white;
     cursor: default;
@@ -30,7 +27,7 @@
     border: 1px solid #ddd;
     border-radius: 6px;
     list-style: none;
-    margin-top: 5px;
+    margin-top: 20px;
     padding: 0;
     display: none;
     z-index: 1;
