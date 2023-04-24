@@ -36,7 +36,7 @@ const Currency = () => {
                 optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
                 });
             }
-    }, []);
+    });
 
     const changeCurrency = (val) => {
         dispatch({
