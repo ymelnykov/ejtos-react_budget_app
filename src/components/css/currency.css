@@ -1,0 +1,26 @@
+.curr {
+    background-color: lightgreen;
+    color: white;
+}
+
+select.curr {
+    /* Reset Select */
+    /* appearance: none; */
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    /* flex: 1; */
+    /* padding: 0 1em; */
+    color: white;
+    background-color: lightgreen;
+  }
+ select.curr option {
+    background-color: lightgreen;
+    color: black;
+ }
+ select.curr option:checked,
+ select.curr option:hover {
+    box-shadow: 0 0 10px 100px white inset;
+ }
+

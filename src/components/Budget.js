@@ -1,13 +1,22 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-import ExpenseTotal from './ExpenseTotal';
+
 const Budget = () => {
-    const { budget, currency, dispatch } = useContext(AppContext);
+    const { budget, expenses, remaining, currency, dispatch } = useContext(AppContext);
+    const totalExpenses = expenses.reduce((total, item) => {
+        return (total += item.cost);
+    }, 0);
+
 
     const setBudget = (val) => {
+        // if (val < {totalExpenses}) {
+        //     alert('Budget cannot be less than Spent so far'+{totalExpenses});
+        //     return;
+        // }
+        // val = remaining>=0 ? val : budget
         dispatch({
             type: 'SET_BUDGET',
-            payload:val,
+            payload: val
         })
     }
     return (
@@ -16,7 +25,7 @@ const Budget = () => {
                 <input
                 required='required'
                 max='20000'
-                min={ExpenseTotal}
+                min={totalExpenses}
                 step='10'
                 type='number'
                 id='budget'
