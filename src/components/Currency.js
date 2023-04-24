@@ -1,9 +1,42 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {AppContext} from '../context/AppContext';
 import './css/currency.css';
 
+
 const Currency = () => {
     const {dispatch} = useContext(AppContext);
+
+    useEffect((dispatch) => {
+        const dropdown = document.querySelector('.custom-dropdown');
+        const selectedOption = dropdown.querySelector('.selected-option');
+        const optionsList = dropdown.querySelector('.options-list');
+        const options = dropdown.querySelectorAll('.options-list li');
+    
+        options.forEach(option => {
+        option.addEventListener('click', () => {
+            selectedOption.textContent = `Currency (${option.textContent}) \u25bc`;
+            changeCurrency(option.dataset.value);
+            optionsList.style.display = 'none';
+        });
+        });
+    
+        selectedOption.addEventListener('click', () => {
+        optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+        });
+        return () =>{
+            options.forEach(option => {
+                option.addEventListener('click', () => {
+                    selectedOption.textContent = `Currency (${option.textContent}) \u25bc`;
+                    changeCurrency(option.dataset.value);
+                    optionsList.style.display = 'none';
+                });
+                });
+            
+                selectedOption.addEventListener('click', () => {
+                optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+                });
+            }
+    }, []);
 
     const changeCurrency = (val) => {
         dispatch({
@@ -13,24 +46,21 @@ const Currency = () => {
     }
 
     return (
-        <div className='alert curr'> Currency {
-            <select
-            className="curr"
-            name="Currency" 
-            id="Currency" 
-            // onFocus={this.size=5}
-            // onBlur={this.size=0}
-            onChange={event=>changeCurrency(event.target.value)}>
-            {/* onChange={this.size=1}
-            onChange={this.blur()} */}
-                <option value="£">£ Pound</option>
-                <option value="$">$ Dollar</option>
-                <option value="€">€ Euro</option>
-                <option value="₹">₹ Ruppee</option>
-            </select>	
-            }	
+        <div className='alert curr'>
+            <div class="custom-dropdown">
+            <div class="selected-option">Currency (£ Pound) &#9660;</div>
+            <ul class="options-list">
+                <li data-value="$">$ Dollar</li>
+                <li data-value="£">£ Pound</li>
+                <li data-value="€">€ Euro</li>
+                <li data-value="₹">₹ Ruppee</li>
+            </ul>
+            </div>
         </div>
     );
 };
 
 export default Currency;
+
+
+

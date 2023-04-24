@@ -3,24 +3,48 @@
     color: white;
 }
 
-select.curr {
-    /* Reset Select */
-    /* appearance: none; */
-    outline: 0;
-    border: 0;
-    box-shadow: none;
-    /* Personalize */
-    /* flex: 1; */
-    /* padding: 0 1em; */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    border-color: lightgreen;
+    border-radius: 6px;
     color: white;
+    }
+
+    .selected-option {
+    /* padding: 10px; */
+    /* border: 1px solid #ddd;
+    border-radius: 6px; */
     background-color: lightgreen;
-  }
- select.curr option {
+    color: white;
+    cursor: default;
+    }
+
+    .options-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     background-color: lightgreen;
     color: black;
- }
- select.curr option:checked,
- select.curr option:hover {
-    box-shadow: 0 0 10px 100px white inset;
- }
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    list-style: none;
+    margin-top: 5px;
+    padding: 0;
+    display: none;
+    z-index: 1;
+    }
 
+    .options-list li {
+    padding: 10px;
+    cursor: default;
+    }
+
+    .options-list li:hover {
+    background-color: white;
+    }
+
+    .custom-dropdown:hover .options-list {
+    display: block;
+    }
