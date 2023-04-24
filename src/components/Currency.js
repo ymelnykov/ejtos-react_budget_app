@@ -6,7 +6,7 @@ import './css/currency.css';
 const Currency = () => {
     const {dispatch} = useContext(AppContext);
 
-    useEffect((dispatch) => {
+    useEffect(() => {
         const dropdown = document.querySelector('.custom-dropdown');
         const selectedOption = dropdown.querySelector('.selected-option');
         const optionsList = dropdown.querySelector('.options-list');
