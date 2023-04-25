@@ -13,16 +13,17 @@ const Currency = () => {
         const options = dropdown.querySelectorAll('.options-list li');
     
         options.forEach(option => {
-        option.addEventListener('click', () => {
-            selectedOption.textContent = `Currency (${option.textContent}) \u25bc`;
-            changeCurrency(option.dataset.value);
-            optionsList.style.display = 'none';
-        });
+            option.addEventListener('click', () => {
+                selectedOption.textContent = `Currency (${option.textContent}) \u25bc`;
+                changeCurrency(option.dataset.value);
+                optionsList.style.display = 'none';
+            });
         });
     
         selectedOption.addEventListener('click', () => {
         optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
         });
+        
         return () =>{
             options.forEach(option => {
                 option.addEventListener('click', () => {
@@ -30,12 +31,12 @@ const Currency = () => {
                     changeCurrency(option.dataset.value);
                     optionsList.style.display = 'none';
                 });
-                });
+            });
             
-                selectedOption.addEventListener('click', () => {
-                optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
-                });
-            }
+            selectedOption.addEventListener('click', () => {
+            optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+            });
+        }
     });
 
     const changeCurrency = (val) => {
