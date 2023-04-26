@@ -1,5 +1,7 @@
 # Budget
 
+![Website screenshot](budget_screenshot.png)
+
 ## Scenario
 
 You have just joined RKL Insurance company's IT department as a front-end engineer. The company wants you to create an application front end which will allow them to plan for budgeting expenses for various departments.
@@ -35,7 +37,7 @@ On change of the dropdown value, all the currency representation on the screen c
 An increase button stylized with the image provided is added for all departments in the allocation. Onclicking the button increases the value by 10.
 A decrease button stylized with the image provided is added for all departments in the allocation. Onclicking the button decreases the value by 10.
 
-##Technology Stack
+## Technology Stack
 
 - JavaScript
 - React
