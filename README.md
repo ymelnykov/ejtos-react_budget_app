@@ -36,7 +36,6 @@ You have just joined RKL Insurance company's IT department as a front-end engine
 
 ## Technology Stack
 
-- JavaScript
-- React
+- JavaScript, React
 - HTML
 - CSS, Bootstrap
